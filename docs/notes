@@ -1,1 +1,22 @@
+*1*
 
+
+cat > first-shell-script.sh <<'EOF'
+> #!/bin/bash
+>
+> echo " my name is $(whoami)"
+acccc@DESKTOP-TYHUJ:~$ 
+acccc@DESKTOP-TYHUJ:~$  cat >> first-shell-script.sh <<'EOF'
+> echo " today's date is $(date)
+> echo " i am in $(pwd)"
+> EOF
+acccc@DESKTOP-TYHUJ:~$ chmod +x first-shell-script.sh
+acccc@DESKTOP-TYHUJ:~$ ./first-shell-script.sh
+
+
+*What I learned:*
+
+Starting a script with the shebang #!/bin/bash
+Creating files with heredocs (cat > file << 'EOF') and appending with >>
+Running commands inside strings with $(command)
+Making a script executable with chmod +x
