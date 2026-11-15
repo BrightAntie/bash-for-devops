@@ -1,22 +1,40 @@
-*1*
+# First Shell Script
 
+My first Bash script, written while learning shell scripting. It prints the current user, today's date, and the current directory.
 
+## Creating the script
+
+Create the file with a heredoc:
+
+```bash
 cat > first-shell-script.sh <<'EOF'
-> #!/bin/bash
->
-> echo " my name is $(whoami)"
-acccc@DESKTOP-TYHUJ:~$ 
-acccc@DESKTOP-TYHUJ:~$  cat >> first-shell-script.sh <<'EOF'
-> echo " today's date is $(date)
-> echo " i am in $(pwd)"
-> EOF
-acccc@DESKTOP-TYHUJ:~$ chmod +x first-shell-script.sh
-acccc@DESKTOP-TYHUJ:~$ ./first-shell-script.sh
+#!/bin/bash
 
+echo " my name is $(whoami)"
+EOF
+```
 
-*What I learned:*
+Append more lines with `>>`:
 
-Starting a script with the shebang #!/bin/bash
-Creating files with heredocs (cat > file << 'EOF') and appending with >>
-Running commands inside strings with $(command)
-Making a script executable with chmod +x
+```bash
+cat >> first-shell-script.sh <<'EOF'
+echo " today's date is $(date)"
+echo " i am in $(pwd)"
+EOF
+```
+
+## Running the script
+
+Make it executable, then run it:
+
+```bash
+chmod +x first-shell-script.sh
+./first-shell-script.sh
+```
+
+## What I learned
+
+- Starting a script with the shebang `#!/bin/bash`
+- Creating files with heredocs (`cat > file << 'EOF'`) and appending with `>>`
+- Running commands inside strings with `$(command)`
+- Making a script executable with `chmod +x`
